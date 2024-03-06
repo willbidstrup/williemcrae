@@ -2,10 +2,16 @@ html {
     font-size: 18px; /* or 20px */
 }
 
+@font-face {
+    font-family: 'InterstateBlackCompressed';
+    src: url('fonts/Interstate Black Compressed.ttf') format('truetype');
+}
+
+
 body {
     background-color: black;
     color: white;
-    font-family: courier;
+    font-family: 'InterstateBlackCompressed', Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
