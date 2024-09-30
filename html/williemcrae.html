@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willie McRae... as himself</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="../index.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Willie McRae... as himself</h1>
+
+<p>
+These are songs by me. As me.</p>
+
+
+
+
+
+<h1>Willie McRae Jukebox</h1>
+<p>Here are 8 songs for your listening pleasure. <br>
+You can click the player once to hear them all in order, or pick your favourite. </p>
+
+<audio id="audioPlayer" controls>
+    <source id="audioSource" src="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Jungle_Law.mp3 " type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<p id="nowPlaying">Now Playing: <span id="currentSong">Jungle Law</span></p>
+
+<ul id="playlist">
+    <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Jungle_Law.mp3 ">Jungle Law</a></li>
+    <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/When_I_Get_to_Where_Im_Going.mp3">Space Trucker (When I Get To Where I'm Going)</a></li>
+    <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Back_from_Hell.mp3">Back From Hell</a></li>
+    <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/The_Black_Knight.mp3">The Black Knight</a></li>
+    <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Poor.mp3">Poor</a></li>
+    <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Gumeracha_Frog.mp3">Gumeracha Frog</a></li>
+    <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Farmer_Zombie.mp3">Farmer Zombie</a></li>
+    <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Day_By_Day.mp3">Day By Day</a></li>
+</ul>
+
+<script>
+    var audioPlayer = document.getElementById('audioPlayer');
+    var audioSource = document.getElementById('audioSource');
+    var playlist = document.getElementById('playlist');
+    var nowPlaying = document.getElementById('currentSong');
+    var links = playlist.getElementsByTagName('a');
+    var current = 0;
+
+    function playSong(e) {
+        e.preventDefault();
+        var songName = this.textContent;
+        audioSource.src = this.href;
+        nowPlaying.textContent = songName;
+        audioPlayer.load();
+        audioPlayer.play();
+        current = Array.prototype.indexOf.call(links, this);
+    }
+
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', playSong);
+    }
+
+    audioPlayer.addEventListener('ended', function () {
+        current++;
+        if (current >= links.length) {
+            current = 0;
+        }
+        var nextSong = links[current];
+        audioSource.src = nextSong.href;
+        nowPlaying.textContent = nextSong.textContent;
+        audioPlayer.load();
+        audioPlayer.play();
+    });
+</script>
+
+
+<br>
+<br>
+
+<h2>Jungle Law</h2>
+    <audio controls>
+        <source src="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Jungle_Law.mp3 " type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+<br>
+<br>
+
+<h2>Space Trucker (When I Get To Where I'm Going)</h2>
+    <audio controls>
+        <source src="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/When_I_Get_to_Where_Im_Going.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+<br>
+<br>
+
+<h2>Back From Hell</h2>
+    <audio controls>
+        <source src="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Back_from_Hell.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+<br>
+<br>
+
+<h2>The Black Knight</h2>
+    <audio controls>
+        <source src="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/The_Black_Knight.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+<br>
+<br>
+
+<h2>Poor</h2>
+    <audio controls>
+        <source src="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Poor.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+<br>
+<br>
+
+<h2>Gumeracha Frog</h2>
+    <audio controls>
+        <source src="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Gumeracha_Frog.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+<br>
+<br>
+
+<h2>Farmer Zombie</h2>
+    <audio controls>
+        <source src="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Farmer_Zombie.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+<br>
+<br>
+
+<h2>Day By Day</h2>
+    <audio controls>
+        <source src="https://williemcraewebsitesongs.blob.core.windows.net/williemcrae/Day_By_Day.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+<br>
+<br>
+
+<p> COMING SOON. "Songs That Spark Joy" x27</p>
+
+<p>Train Of War</p>
+<p>Starting Over Again</p>
+<p>Tonight I'm Gonna Bury It</p>
+<p>The Promise Of A Man Soon To Die</p>
+<p>Battle Cry Of The Indigenous Man</p>
+<p>Coming Back To You</p>
+<p>The End Of The Line</p>
+<p>The Flaming Skull Of Death</p>
+<p>Let's Talk About You</p>
+<p>Truck Driver's Code</p>
+<p>All I'm Living For</p>
+<p>A Nice Night To Be Alone</p>
+<p>Killing Time</p>
+<p>Heading For The Horizon</p>
+<p>Whispers In The Wind</p>
+<p>The Man Who Mutters</p>
+<p>Pornographic Pirate</p>
+<p>Spiders On The Ceiling</p>
+<p>Cooked With Love</p>
+<p>Living In Moorooka</p>
+<p>The Murder Of Jake Catlin</p>
+<p>Hard Times</p>
+<p>Tease Me</p>
+<p>Another Day Another Place</p>
+<p>Jenny</p>
+<p>Becky</p>
+<p>Interstate Girlfriend Blues</p>
+
+    </main>
+</body>
+</html>
