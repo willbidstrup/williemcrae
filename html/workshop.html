@@ -21,6 +21,87 @@
         <h1>Willie McRae's Workshop</h1>
 
 
+        <h2>High Stakes Setlist</h2>
+
+        <audio id="audioPlayer" controls>
+            <source id="audioSource" src="https://williemcraewebsitesongs.blob.core.windows.net/workshop/Straight_In_Straight_Out_(VOCAL_Demo_2025-01-17).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <p id="nowPlaying">Now Playing: <span id="currentSong">Straight In Straight Out)</span></p>
+        
+        <ul id="playlist">
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/workshop/Straight_In_Straight_Out_(VOCAL_Demo_2025-01-17).mp3">Straight In Straight Out</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/workshop/Monte_Cristo_(Demo_VOCAL_2024-12-10).mp3">Monte Cristo</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Shake_Your_Head.mp3">Shake Your Head</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Cash_Money.mp3">Cash Money</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Scream.mp3">Scream</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Hellfire_Heart.mp3">Hellfire Heart</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Embrace.mp3">Embrace</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Start_It_Up.mp3">Start It Up</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Oz_Summer_Nights.mp3">Oz Summer Nights</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Black_Label.mp3">Black Label</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Texan_Brunette_Woman.mp3">Texan Brunette Woman</a></li>
+            <li><a href="hhttps://williemcraewebsitesongs.blob.core.windows.net/highstakes/I_Want_You.mp3">I Want You</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Take_It_As_It_Comes.mp3">Take It As It Comes</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Over_The_Trees.mp3">Over The Trees</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/workshop/Power_Pole(Demo-2024-09-16).mp3">Power Pole</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Feel_The_Love.mp3">Feel The Love</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/workshop/My_Freedom_(VOCAL_Demo_2025-01-11).mp3">My Freedom</a></li>
+            <li><a href="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/Where_It_All_Went.mp3">Where It All Went</a></li>
+        </ul>
+
+
+        <script>
+            var audioPlayer = document.getElementById('audioPlayer');
+            var audioSource = document.getElementById('audioSource');
+            var playlist = document.getElementById('playlist');
+            var nowPlaying = document.getElementById('currentSong');
+            var links = playlist.getElementsByTagName('a');
+            var current = 0;
+        
+            function playSong(e) {
+                e.preventDefault();
+                var songName = this.textContent;
+                audioSource.src = this.href;
+                nowPlaying.textContent = songName;
+                audioPlayer.load();
+                audioPlayer.play();
+                current = Array.prototype.indexOf.call(links, this);
+            }
+        
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', playSong);
+            }
+        
+            audioPlayer.addEventListener('ended', function () {
+                current++;
+                if (current >= links.length) {
+                    current = 0;
+                }
+                var nextSong = links[current];
+                audioSource.src = nextSong.href;
+                nowPlaying.textContent = nextSong.textContent;
+                audioPlayer.load();
+                audioPlayer.play();
+            });
+        </script>
+        
+        
+            <br>
+            <br>
+
+
+        <h2>Rod Ready (Studio and Live)</h2>
+<video width="640" height="360" controls>
+    <source src="https://williemcraewebsitesongs.blob.core.windows.net/highstakes/High-Stakes-Rod-Ready.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+  <br>
+<br>
+
+
         <h2> Demos </h2>
 
         <br>
@@ -83,7 +164,7 @@
         <br>
 
 
-
+        
 
         <h2>High Bass Jukebox</h2>
 <p>High Stakes songs mixed for learning bass. <br>
